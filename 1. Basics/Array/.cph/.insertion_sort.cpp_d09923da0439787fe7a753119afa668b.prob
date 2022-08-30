@@ -1,0 +1,1 @@
+{"name":"Local: insertion_sort","url":"d:\\Programming\\VS_programs\\C++\\Basics\\Array\\insertion_sort.cpp","tests":[{"id":1657216895680,"input":"6\n10 9 8 7 6 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\VS_programs\\C++\\Basics\\Array\\insertion_sort.cpp","group":"local","local":true}
