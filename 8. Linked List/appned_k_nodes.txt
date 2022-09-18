@@ -1,0 +1,36 @@
+
+node* append_k_nodes(node* &head,int pos){
+
+    node* temp=head;
+
+    int counter=1;
+
+    while(temp->next!=NULL && counter<pos){
+
+        temp=temp->next;
+
+        counter++;
+
+
+
+    }
+
+    node* new_head=temp->next;
+
+    temp->next=NULL;
+
+    node* tail= new_head;
+
+    while(tail->next!=NULL){
+
+        tail=tail->next;
+
+
+
+    }
+
+    tail->next=head;
+
+    return new_head;
+
+}

@@ -1,4 +1,4 @@
-// Inster at tail, Insert at Head, search, delete
+// Insert at tail, Insert at Head, search, delete
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -10,6 +10,7 @@ public:
     node *next;
 
     // Constructor
+    node() {}
     node(int value)
     {
         data = value;
@@ -23,7 +24,6 @@ void insert_at_head(node *&head, int val)
     n->next = head;
     head = n;
 }
-
 void insert_at_tail(node *&head, int val)
 {
     node *n = new node(val);
@@ -40,6 +40,7 @@ void insert_at_tail(node *&head, int val)
     }
     temp->next = n;
 }
+
 void delete_at_head(node *&head)
 {
     node *to_delete = head;
@@ -86,11 +87,10 @@ bool search(node *head, int key)
 
 void display(node *head)
 {
-    node *temp = head;
-    while (temp != NULL)
+    while (head != NULL)
     {
-        cout << temp->data << "->";
-        temp = temp->next;
+        cout << head->data << "->";
+        head = head->next;
     }
     cout << "NULL" << endl;
 }
@@ -99,16 +99,21 @@ int main()
 {
     node *head = NULL;
     insert_at_tail(head, 1);
+    insert_at_tail(head, 6);
     insert_at_tail(head, 2);
-    insert_at_tail(head, 3);
+    insert_at_tail(head, 7);
+    insert_at_tail(head, 9);
+    display(head);
+    delete_node(head, 2);
     display(head);
 
-    insert_at_head(head, 0);
+    insert_at_head(head, 5);
+    insert_at_head(head, 12);
     display(head);
 
     cout << "bool " << search(head, 2) << endl;
 
-    delete_node(head, 3);
+    delete_node(head, 6);
     display(head);
     delete_at_head(head);
     display(head);

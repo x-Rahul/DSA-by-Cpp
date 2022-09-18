@@ -5,38 +5,44 @@ class node
 {
 public:
     int data;
-    node* next;;
+    node *next;
 
-    //constructor
-    node(int value){
+    // constructor
+    node(int value)
+    {
         data = value;
         next = NULL;
     }
 };
 
-void insert_at_tail(node* &head, int val){
-    node* n = new node(val);
-    if(head == NULL){
+void insert_at_tail(node *&head, int val)
+{
+    node *n = new node(val);
+    if (head == NULL)
+    {
         head = n;
         return;
     }
 
-    node* temp = head;
+    node *temp = head;
     while (temp->next != NULL)
     {
         temp = temp->next;
     }
     temp->next = n;
 }
+
 // Method 1:
-node* revList_itr(node* &head){
-    node* prevptr = NULL;
-    node* currptr = head;
-    node* nextptr;
+node *revList_itr(node *&head)
+{
+    node *prevptr = NULL;
+    node *currptr = head;
+    node *nextptr;
 
     while (currptr != NULL)
     {
         nextptr = currptr->next;
+
         currptr->next = prevptr;
 
         prevptr = currptr;
@@ -46,33 +52,33 @@ node* revList_itr(node* &head){
 }
 // Method 2:
 
-node* revList_rec(node* &head){
-    
-    if (head == NULL || head->next == NULL){
+node *revList_rec(node *&head)
+{
+
+    if (head == NULL || head->next == NULL)
+    {
         return head;
     }
-    node* newhead= revList_rec(head->next);
+    node *newhead = revList_rec(head->next);
     head->next->next = head;
-    head->next =NULL;
+    head->next = NULL;
 
     return newhead;
 }
 
 void display(node *head)
 {
-    node *temp = head;
-    while (temp != NULL)
+    while (head != NULL)
     {
-        cout << temp->data << "->";
-        temp = temp->next;
+        cout << head->data << "->";
+        head = head->next;
     }
     cout << "NULL" << endl;
 }
 
-int
-main()
+int main()
 {
-    node* head = NULL;
+    node *head = NULL;
     insert_at_tail(head, 1);
     insert_at_tail(head, 2);
     insert_at_tail(head, 3);
@@ -80,10 +86,10 @@ main()
     insert_at_tail(head, 5);
     display(head);
 
-    node* newhead = revList_itr(head);
+    node *newhead = revList_itr(head);
     display(newhead);
 
-    node* newhd = revList_rec(newhead);
+    node *newhd = revList_rec(newhead);
     display(newhd);
     return 0;
 }
