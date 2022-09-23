@@ -1,4 +1,3 @@
-
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -16,35 +15,12 @@ struct Node
     }
 };
 
-void levelOrder(Node *root){
-    if(root == NULL) return;
-    queue<Node*> Q;
-    Q.push(root);
-
-    while (!Q.empty())
-    {
-        cout<<Q.front()->data<<" ";
-        if(Q.front()->left) Q.push(Q.front()->left);
-        if(Q.front()->right) Q.push(Q.front()->right);
-        Q.pop();
-        
-    }
-    cout<<endl;
-    
+int Height(Node *root){
+    if(root == NULL) return 0;
+    return max(Height(root->left), Height(root->right)) + 1;
 }
 
-
-int32_t main(){
-    // Node *root = new Node(1);
-
-    // root->left = new Node(2);
-    // root->right = new Node(3);
-
-    // root->left->left = new Node(4);
-    // root->left->right = new Node(5);
-    // root->right->left = new Node(6);
-    // root->right->right = new Node(7);
-
+int main(){
     struct Node *root = new Node(5);
 
     root->left = new Node(6);
@@ -62,8 +38,6 @@ int32_t main(){
     root->right->left->right = new Node(6);
     root->right->left->right->right = new Node(7);
 
-
-    // Level Order Traversal
-    levelOrder(root);
+    cout<<Height(root);
     return 0;
 }

@@ -1,29 +1,3 @@
-/*
-steps
-1. Make Empty Queue.
-2. Insert root and NULL
-3. remove elements from front and analyse 
-    4. check if(left child exit){
-                queue.push (element)
-                }
-             if (right child exit){
-                queue.push(element)
-             }
-             else{
-                print element
-             }
-             if(elememt == NULL){
-                if(queue not empty){
-                    queue.push(NULL)
-                }
-                else{
-                    move to next level
-                }
-             }
-
-*/
-
-
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -41,35 +15,54 @@ struct Node
     }
 };
 
-void levelOrder(Node *root){
-    if(root == NULL) return;
+int klevelSum(Node *root, int k){
+    if(root == NULL) return 0;
     queue<Node*> Q;
     Q.push(root);
 
-    int k = 3;// start from here
+    int sum = 0, level = 0, flag = 0;
     while (!Q.empty())
-    {
-        cout<<Q.front()->data<<" ";
-        if(Q.front()->left) Q.push(Q.front()->left);
-        if(Q.front()->right) Q.push(Q.front()->right);
-        Q.pop();
+    {   
+        int size = Q.size();
+        while(size--){
+            Node *front = Q.front();Q.pop();
+            if(level == k) {
+                sum += front->data;
+                flag =1;
+            }
+            else{
+                if(front->left) Q.push(front->left);
+                if(front->right) Q.push(front->right);
+            }             
+        }
+        // Increment the variable level by 1 for each level
+        level++;  
+        // Break out from the loop after the sum of nodes at K level is found
+        if(flag == 1) break;
     }
-    
+    return sum;
 }
 
-
 int32_t main(){
-    Node *root = new Node(1);
+    struct Node *root = new Node(5);
 
-    root->left = new Node(2);
+    root->left = new Node(6);
     root->right = new Node(3);
 
-    root->left->left = new Node(4);
-    root->left->right = new Node(5);
-    root->right->left = new Node(6);
-    root->right->right = new Node(7);
+    root->left->left = new Node(9);
+    root->left->right = new Node(1);
+    root->right->left = new Node(2);
+    root->right->right = new Node(1);
+
+    root->left->right->left = new Node(2);
+    root->left->right->left->left = new Node(3);
+    root->left->right->left->right = new Node(5);
+
+    root->right->left->right = new Node(6);
+    root->right->left->right->right = new Node(7);
 
     // Level Order Traversal
-    levelOrder(root);
+    int k = 3;
+    cout<<klevelSum(root, 2);
     return 0;
 }

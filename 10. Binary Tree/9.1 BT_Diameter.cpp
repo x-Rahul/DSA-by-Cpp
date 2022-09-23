@@ -1,4 +1,3 @@
-
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -16,35 +15,24 @@ struct Node
     }
 };
 
-void levelOrder(Node *root){
-    if(root == NULL) return;
-    queue<Node*> Q;
-    Q.push(root);
-
-    while (!Q.empty())
-    {
-        cout<<Q.front()->data<<" ";
-        if(Q.front()->left) Q.push(Q.front()->left);
-        if(Q.front()->right) Q.push(Q.front()->right);
-        Q.pop();
-        
+int Diameter(Node *root, int *height){
+    if(root == NULL){
+        *height == 0;
+        return 0;
     }
-    cout<<endl;
+
+    int lh = 0, rh = 0;
+
+    int ld = Diameter(root->left, &lh);
+    int rd = Diameter(root->right, &rh); 
+    int cd = lh+rh+1;
+
+    *height = max(lh, rh) + 1; // to calculate height
     
+    return max(cd, max( Diameter(root->left, &lh), Diameter(root->right, &rh) )); // max( cd, max(ld,rd) )
 }
 
-
-int32_t main(){
-    // Node *root = new Node(1);
-
-    // root->left = new Node(2);
-    // root->right = new Node(3);
-
-    // root->left->left = new Node(4);
-    // root->left->right = new Node(5);
-    // root->right->left = new Node(6);
-    // root->right->right = new Node(7);
-
+int main(){
     struct Node *root = new Node(5);
 
     root->left = new Node(6);
@@ -62,8 +50,7 @@ int32_t main(){
     root->right->left->right = new Node(6);
     root->right->left->right->right = new Node(7);
 
-
-    // Level Order Traversal
-    levelOrder(root);
+    int height = 0;
+    cout<<Diameter(root, &height);
     return 0;
 }

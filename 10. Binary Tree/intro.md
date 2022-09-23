@@ -69,3 +69,6 @@ void postOrder(struct Node *root){
     cout<<root->data<<" ";
 }
 ```
+## Keyterms
+Height: Distance between root node and deepest node of tree.<br>
+Diameter: Number of nodes in the longest path between any 2 leaves.
