@@ -1,3 +1,5 @@
+### Rahul Meena (Notes)
+
 # Binary trees
 ## Properties of Binary Trees
 1. Maximum nodes at level L = 2<sup>L</sup> .
@@ -70,5 +72,11 @@ void postOrder(struct Node *root){
 }
 ```
 ## Keyterms
-Height: Distance between root node and deepest node of tree.<br>
-Diameter: Number of nodes in the longest path between any 2 leaves.
+### Height
+Distance between root node and deepest node of tree.
+
+### Diameter
+Number of nodes in the longest path between any 2 leaves.<br>
+
+### Balanced height Tree
+For each node, the difference between the heights of the left subttree & right subtree <= 1.
