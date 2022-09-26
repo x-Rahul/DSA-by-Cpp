@@ -36,6 +36,9 @@ int LCA(Node *root, int n1, int n2){
     return path1[div-1];
 }
 
+
+
+// Main
 Node *LCA2(Node *root, int n1, int n2){
 
     if(root == NULL) return NULL;
