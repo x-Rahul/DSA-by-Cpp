@@ -22,18 +22,19 @@ int klevelSum(Node *root, int k){
 
     int sum = 0, level = 0, flag = 0;
     while (!Q.empty())
-    {   
+    {  
         int size = Q.size();
         while(size--){
             Node *front = Q.front();Q.pop();
-                    if(level == k) {
-                        sum += front->data;
-                        flag =1;
-                    }
             if(front->left) Q.push(front->left);
             if(front->right) Q.push(front->right);   
+            if(level == k) {
+                sum += front->data;
+                flag =1;
+            }        
         }
-        level++;  
+        cout<<endl;
+        level++; 
         if(flag == 1) break;
     }
     return sum;
@@ -59,6 +60,7 @@ int32_t main(){
 
     // Level Order Traversal
     int k = 3;
-    cout<<klevelSum(root, 3);
+    cout<<endl;
+    cout<<klevelSum(root, k);
     return 0;
 }

@@ -81,6 +81,14 @@ Number of nodes in the longest path between any 2 leaves.<br>
 ### Balanced height Tree
 For each node, the difference between the heights of the left subttree & right subtree <= 1.
 
+## Count Nodes of a binary tree : 
+leftNodes + rightNodes + 1
+## Sum of Nodes of a binary tree : 
+leftNodes + rightNodes + Node
+## Height of a binary tree :
+max(leftNodes, rightNodes) + 1
+
+
 ## Binary Search Tree :
 BSTs are special trees that are used for fast lookup, insertion and deletion. Time complexity O(log(n)).<br>
 3 Rules :<br>

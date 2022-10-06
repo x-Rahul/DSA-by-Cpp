@@ -7,7 +7,6 @@ struct Node
     struct Node* left;
     struct Node* right;
 
-    // constructor
     Node(int value){
         data = value;
         left = NULL;

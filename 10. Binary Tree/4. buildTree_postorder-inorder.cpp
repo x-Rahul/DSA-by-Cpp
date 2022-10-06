@@ -29,31 +29,24 @@ struct Node
     }
 };
 
-int search(int curr, int inorder[], int start, int end){
-    for (int i = start; i <= end; i++){
-        if(inorder[i] == curr)
-            return i;
-    }
-    return -1;
-}
-
-Node *buildTree(int postorder[], int inorder[], int start, int end){
+Node *buildTree(int postorder[], int inorder[], int s, int e){
     
-
-    if(start > end)
-        return NULL;
+    if(s > e) return NULL;
 
     static int idx = 4;
-    int curr = postorder[idx];
-    idx--; 
-    Node *node = new Node(curr);
+    int rootValue = postorder[idx];
+    idx--;
+    Node *node = new Node(rootValue);
 
-    if(start == end)
-        return node;
+    if(s == e) return node;
     
-    int pos = search(curr, inorder, start, end);
-    node->right = buildTree(postorder, inorder,pos+1, end);
-    node->left = buildTree(postorder, inorder, start, pos-1);
+    int pos;
+    for (int i = s; i <= e; i++){
+        if(inorder[i] == rootValue) pos = i;
+    }
+    
+    node->right = buildTree(postorder, inorder,pos+1, e);
+    node->left = buildTree(postorder, inorder, s, pos-1);
     
     return node; 
 }
@@ -69,9 +62,10 @@ void inorderPrint(struct Node *root){
 int main(){
     int postorder[] = {4,2,5,3,1};
     int inorder[] = {4,2,1,5,3};
+    int s = 0, e = 4;
     
     //build Tree
-    Node *root = buildTree(postorder, inorder, 0, 4);
+    Node *root = buildTree(postorder, inorder, s, e);
     inorderPrint(root);
 
     return 0;

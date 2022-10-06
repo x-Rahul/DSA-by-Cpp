@@ -1,3 +1,4 @@
+
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -15,31 +16,38 @@ struct Node
     }
 };
 
-int klevelSum(Node *root, int k){
-    if(root == NULL) return 0;
+void levelOrder(Node *root){
+    if(root == NULL) return;
     queue<Node*> Q;
     Q.push(root);
 
-    int sum = 0, level = 0, flag = 0;
+    vector<int> v;
+    int sum = 0, flag = 0, level = 0;
     while (!Q.empty())
     {   
-        int size = Q.size();
-        while(size--){
-            Node *front = Q.front();Q.pop();
-                    if(level == k) {
-                        sum += front->data;
-                        flag =1;
-                    }
-            if(front->left) Q.push(front->left);
-            if(front->right) Q.push(front->right);   
-        }
-        level++;  
-        if(flag == 1) break;
+        Node  *curr = Q.front(); Q.pop();
+        v.push_back(curr->data);
+        if(curr->left) Q.push(curr->left);
+        if(curr->right) Q.push(curr->right); 
     }
-    return sum;
+    cout<<endl;
+
+    for(auto i:v) cout<<i<< " ";
+    
 }
 
+
 int32_t main(){
+    // Node *root = new Node(1);
+
+    // root->left = new Node(2);
+    // root->right = new Node(3);
+
+    // root->left->left = new Node(4);
+    // root->left->right = new Node(5);
+    // root->right->left = new Node(6);
+    // root->right->right = new Node(7);
+
     struct Node *root = new Node(5);
 
     root->left = new Node(6);
@@ -57,8 +65,9 @@ int32_t main(){
     root->right->left->right = new Node(6);
     root->right->left->right->right = new Node(7);
 
+    
     // Level Order Traversal
-    int k = 3;
-    cout<<klevelSum(root, 3);
+    levelOrder(root);
+
     return 0;
 }

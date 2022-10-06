@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include<deque>
+#include "bits/stdc++.h"
+#include "deque"
 using namespace std;
 
 int main(){
@@ -10,10 +10,8 @@ int main(){
     dq.push_front(3);
     dq.push_front(4);
 
-    for(auto i:dq)
-        cout<<i<<" ";
-    cout<<"\n";
-    
-    cout<<dq.size();
+    dq.pop_back();
+    dq.pop_front();
+    for(auto i: dq) cout<<i;
     return 0;
 }
