@@ -1,0 +1,1 @@
+{"name":"Local: problem01","url":"/home/dev-r/Documents/Git/Repository/DSA-by-Cpp/STL/Maps/problem01.cpp","tests":[{"id":1665490004262,"input":"8\nabc\ndef\nabc\nghj\njkl\nghj\nghj\nabc","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dev-r/Documents/Git/Repository/DSA-by-Cpp/STL/Maps/problem01.cpp","group":"local","local":true}

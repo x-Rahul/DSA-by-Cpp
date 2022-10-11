@@ -62,13 +62,6 @@ int findDist(Node *root, int k, int dist){ //k - till what node we are finding t
     return right;
 }
 
-int distNodes(Node *root, int n1 , int n2){
-    Node *lca = LCA(root, n1, n2);
-
-    int d1 = findDist(lca, n1, 0);
-    int d2 = findDist(lca, n2, 0);
-    return d1 + d2;
-}
 
 int main(){
     Node *root = new Node(1);
@@ -78,6 +71,13 @@ int main(){
     root->left->left = new Node(4);
     root->right->right = new Node(5);
 
-    cout<<distNodes(root, 4, 5)<<endl; 
+    int n1 =4, n2 = 5;
+    
+    Node *lca = LCA(root,n1,n2);
+    int d1 = findDist(lca, n1, 0);
+    int d2 = findDist(lca, n2, 0);
+
+    int ans = d1+d2;
+    cout<<ans;
     return 0;
 }

@@ -18,7 +18,7 @@ struct Node
 
 // case 1:
 void subtreeNodes(Node *root, int k){
-    if (root == NULL or k < 1) return;
+    if (root == NULL or k < 0) return;
 
     if(k == 0){
         cout << root->data << " ";

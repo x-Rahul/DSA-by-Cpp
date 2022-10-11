@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// A binary Tree Node
 struct Node
 {
 	int data;
