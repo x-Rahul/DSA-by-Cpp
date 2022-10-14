@@ -1,0 +1,1 @@
+{"name":"Local: problem 2","url":"/home/dev-r/Documents/Git/Repository/DSA-by-Cpp/HackerEarth/problem 2.cpp","tests":[{"id":1665516276845,"input":"1\n2 3\n3 2 9 11 2","output":"NO\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dev-r/Documents/Git/Repository/DSA-by-Cpp/HackerEarth/problem 2.cpp","group":"local","local":true}

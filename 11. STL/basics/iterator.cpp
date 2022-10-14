@@ -12,7 +12,7 @@ int main(){
         cout<< *it << " ";
     }
     cout<<"\n";
-    // In Case of pait (*it).first is same as it->first
+    // In Case of pair (*it).first is same as it->first
 
 
     // iterators in short
