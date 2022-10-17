@@ -1,0 +1,1 @@
+{"name":"Local: map","url":"d:\\Programming\\Git\\Repos\\DSA-by-Cpp\\HackerRank\\map.cpp","tests":[{"id":1666017477090,"input":"7\n1 Jesse 20\n1 Jess 12\n1 Jess 18\n3 Jess\n3 Jesse\n2 Jess\n3 Jess","output":"30\n20\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Git\\Repos\\DSA-by-Cpp\\HackerRank\\map.cpp","group":"local","local":true}
