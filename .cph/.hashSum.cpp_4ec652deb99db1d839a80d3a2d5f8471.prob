@@ -1,0 +1,1 @@
+{"name":"Local: hashSum","url":"d:\\Programming\\Git\\Repos\\DSA-by-Cpp\\hashSum.cpp","tests":[{"id":1666247195189,"input":"6\n5 6 2 4 9 4\n\n4\n2 \n4 \n1 \n3","output":"11\n30\n5\n13"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Git\\Repos\\DSA-by-Cpp\\hashSum.cpp","group":"local","local":true}

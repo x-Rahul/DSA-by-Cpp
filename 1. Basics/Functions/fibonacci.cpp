@@ -2,27 +2,20 @@
 using namespace std;
 
 
-void fib(int n)
-{   // 0 1 1 2 3 5 8 13 21
-    int t1 = 0, t2 = 1, next_term;
-
-    for(int i = 1; i<=n; i++){
-
-        cout<<t1;
-        next_term = t1+t2;
-        t1 = t2;
-        t2 = next_term;
+int fib(int n)
+{   
+    int fibo[n];
+    
+    fibo[0] = 1, fibo[1] = 1;
+    for (int i = 2; i < n; i++)
+    {
+        fibo[i] = fibo[i-1] + fibo[i-2];
     }
+    return fibo [n-1];
+  
 }
 
 int main(){
-    
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-  
-    int n;
-    cin>>n;
-    fib(n);
-   
-    return 0;
+
+     cout<<fib(2);
 }
