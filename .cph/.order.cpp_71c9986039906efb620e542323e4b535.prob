@@ -1,0 +1,1 @@
+{"name":"Local: order","url":"d:\\Programming\\Git\\Repos\\DSA-by-Cpp\\order.cpp","tests":[{"id":1666426770810,"input":"2\n5 2 0\n1 5\n1 4\n5 1\n9 4\n13 2\n5 4 2\n4 1\n5 1","output":"3 5\n4 1\n4 2\n10 15\n15 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\Git\\Repos\\DSA-by-Cpp\\order.cpp","group":"local","local":true}

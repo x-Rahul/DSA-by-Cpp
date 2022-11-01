@@ -16,8 +16,9 @@ int main(){
     int ct = count(v.begin(), v.end(), 6);
     cout<<"Count of" << 6 <<" : "<<ct<<endl;
 
-    int ele = *find(v.begin(), v.end(), 7);
-    cout<<ele<<endl;
+    auto eleit = find(v.begin(), v.end(), 4);
+    if(eleit != v.end()) cout<<"Elemeny found at " << eleit-v.begin()<<endl;
+    else cout<<" element not found"<<endl;
 
     reverse(v.begin()+2, v.end());
     for(auto i:v) cout<<i<<" ";
