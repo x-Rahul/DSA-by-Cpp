@@ -18,7 +18,5 @@ int main(){
     // Method 2: inbuilt sort
     sort(v.begin(), v.end());
     // sort(v.rbegin(), v.rend());
-
-    // Method 3: using comparators
     for(auto i: v) cout<< i<< " ";
 }

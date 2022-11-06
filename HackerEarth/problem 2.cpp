@@ -34,35 +34,28 @@ YES
 
 */
 
-// wrong answer?
-
-#include<bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 
 int main(){
-
-    multiset<int> s;
-    int T; cin>>T;
+    long long T; cin>> T;
     while (T--)
     {
-        int N, M; cin>>N>>M;
-        vector<int> v1, v2;
-        while (N--)
-        {
-            int n;cin>>n;
-            v1.push_back(n);
+        long long n, m; cin>> n>>m;
+        multiset<long long> A;
+        while(n--){
+            long long x; cin>>x;
+            A.insert(x);
         }
-        
-        for (int i = 0; i<M; i++)
-        {
-            int n;cin>>n;
-            int flag = 0;
-            for(auto i : v1) if (n == i) flag = 1;
 
-            if(flag == 1) cout<<"YES"<<endl;
-            else if(flag == 0) cout<< "NO"<<endl;
+        while(m--){
+            long long x; cin>> x;
+            auto found = A.find(x);
+            if(found != A.end()) cout<<"YES" << endl;
+            else {
+                cout<<"NO"<<endl;
+                A.insert(x);
+            }
         }
     }
-    
-    return 0;
 }

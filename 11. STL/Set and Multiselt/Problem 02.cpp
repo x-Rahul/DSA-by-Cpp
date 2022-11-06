@@ -32,7 +32,7 @@ int main(){
     unordered_set<string> s; // order does not matter
 
     int n; cin>>n;
-    for(int i = 0; i<n; i++){
+    while(n--){
         string str; cin>>str;
         s.insert(str);
     }

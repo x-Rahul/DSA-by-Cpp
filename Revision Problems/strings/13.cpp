@@ -6,14 +6,14 @@ Find number of time name appear in the string
 using namespace std;
 
 int main(){
-    string str= "timehssdgfastimhftimuhstimhfhstimfs";
+    string str= "tim ehssdgfas tim hf tim uhs tim hfhs tim fs";
     string name = "tim";
 
     int ans = 0;
     while (str.length() != 0)
     {
         size_t found = str.find(name);
-        if(found != string::npos){
+        if(found != str.npos){
             ans++;
             str.erase(found, name.length());
         }
